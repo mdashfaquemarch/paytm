@@ -16,8 +16,8 @@ const Dashboard = () => {
         withCredentials: true,
       });
       console.log(response.data);
-      if (response?.data?.blance) {  // Corrected typo here
-        setBalance(response.data.blance);
+      if (response?.data?.balance) {  // Corrected typo here
+        setBalance(response.data.balance);
       }
     } catch (error) {
       console.error("Error fetching balance:", error);
