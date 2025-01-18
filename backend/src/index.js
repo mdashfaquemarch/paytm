@@ -10,8 +10,19 @@ dotenv.config({});
 const app = express();
 const PORT = process.env.PORT || 7000
 
-
-app.use(cors())
+// CORS configuration
+app.use(
+   cors({
+     origin: "https://paytm-frontend-gvlz.onrender.com", // Replace with your frontend URL
+     credentials: true,
+   })
+ );
+ 
+ /*
+For requests that require credentials, the browser sends a preflight request (an OPTIONS request) to check if the server allows the actual request. Ensure your backend handles preflight requests correct
+ */
+ // Handle preflight requests
+ app.options("*", cors()); // Handle preflight requests for all routes
 
 app.use(express.json());
 
