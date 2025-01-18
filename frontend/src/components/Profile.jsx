@@ -22,7 +22,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     try {
-         await axios.post("/api/v1/users/log-out",{},{withCredentials: true})
+         await axios.post("https://paytm-backend-m8l4.onrender.com/api/v1/users/log-out",{},{withCredentials: true})
          setIsAuth([])
          setIsAuth(false);
     } catch (error) {

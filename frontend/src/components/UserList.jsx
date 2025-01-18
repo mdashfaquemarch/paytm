@@ -10,7 +10,7 @@ const UserList = () => {
 
   useEffect(() => {
     axios
-      .get("/api/v1/users/search-user?filter=" + filter, {
+      .get("https://paytm-backend-m8l4.onrender.com/api/v1/users/search-user?filter=" + filter, {
         withCredentials: true,
       })
       .then((response) => {

@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './DB/index.js';
-
+import cors from 'cors'
 import cookieParsar from 'cookie-parser'
 
 
@@ -11,6 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 7000
 
 
+app.use(cors({
+   origin: "https://paytm-frontend-gvlz.onrender.com",
+   credentials: true
+}))
 
 app.use(express.json());
 

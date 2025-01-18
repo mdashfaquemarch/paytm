@@ -17,7 +17,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const respsonse = await axios.post("/api/v1/users/sign-up",{
+      const respsonse = await axios.post("https://paytm-backend-m8l4.onrender.com/api/v1/users/sign-up",{
         firstName,
         lastName,
         username,

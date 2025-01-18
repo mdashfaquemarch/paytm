@@ -12,7 +12,7 @@ const Dashboard = () => {
   // Define fetchBalance outside of useEffect so it can be reused
   const fetchBalance = async () => {
     try {
-      const response = await axios.get("/api/v1/accounts/check-balance", {
+      const response = await axios.get("https://paytm-backend-m8l4.onrender.com/api/v1/accounts/check-balance", {
         withCredentials: true,
       });
       console.log(response.data);

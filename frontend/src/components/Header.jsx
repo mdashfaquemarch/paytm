@@ -18,7 +18,7 @@ const Header = () => {
   useEffect(() => {
       const getCurrentUser = async () => {
         try {
-          const response = await axios.get("/api/v1/users/current-user",{withCredentials:true})
+          const response = await axios.get("https://paytm-backend-m8l4.onrender.com/api/v1/users/current-user",{withCredentials:true})
           if(response?.data?.success) {
             setIsAuth(true);
             setUser(response.data.data);

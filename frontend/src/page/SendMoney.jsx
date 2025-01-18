@@ -21,7 +21,7 @@ const SendMoney = () => {
     // Handle send money logic here
     console.log({ Amount });
     try {
-      const response = await axios.post("/api/v1/accounts/transfer-money",{
+      const response = await axios.post("https://paytm-backend-m8l4.onrender.com/api/v1/accounts/transfer-money",{
         to: id,
         amount: Amount
       },{withCredentials: true})
