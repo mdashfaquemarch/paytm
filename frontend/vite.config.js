@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   server: {
     proxy: {
-      "/api/v1": "http://localhost:4000"
+      "/api/v1": "https://paytm-backend-m8l4.onrender.com"
     }
   },
   plugins: [react()],
