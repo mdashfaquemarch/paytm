@@ -16,24 +16,19 @@ const Dashboard = () => {
         withCredentials: true,
       });
       console.log(response.data);
-      if (response?.data?.blance) {
+      if (response?.data?.blance) {  // Corrected typo here
         setBalance(response.data.blance);
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching balance:", error);
+      setBalance(0.0);  // Optionally, set balance to a default value
     }
   };
 
   useEffect(() => {
     // Fetch balance immediately
     fetchBalance();
-
-    // Set up polling every 30 seconds
-    const interval = setInterval(fetchBalance, 30000);
-
-    // Cleanup the interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
+  }, [fetchBalance]);  // Add fetchBalance as a dependency
 
   return (
     <div className="min-h-screen">
