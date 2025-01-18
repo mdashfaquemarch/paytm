@@ -11,10 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 7000
 
 
-app.use(cors({
-   origin: "https://paytm-frontend-gvlz.onrender.com",
-   credentials: true
-}))
+app.use(cors())
 
 app.use(express.json());
 
