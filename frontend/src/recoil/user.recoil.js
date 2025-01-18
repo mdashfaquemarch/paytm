@@ -1,18 +1,13 @@
-import { atom } from 'recoil'
+import { atom } from 'recoil';
 
-const currentUserState = atom({
-    key: "userState",
-    default: []
+// Atom for current user data
+export const currentUserState = atom({
+  key: "currentUserState", // More specific key
+  default: null, // Use null or {} if user data is an object
 });
 
-const isUserLoggedIn = atom({
-    key: "isUserAuthState",
-    default: false
-})
-
-
-
-  export {
-    currentUserState,
-    isUserLoggedIn
-  }
+// Atom for authentication status
+export const isUserLoggedIn = atom({
+  key: "isUserLoggedIn", // Simplified key
+  default: false,
+});
