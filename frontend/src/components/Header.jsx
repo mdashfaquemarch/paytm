@@ -12,7 +12,7 @@ const Header = () => {
   const setIsAuth = useSetRecoilState(isUserLoggedIn);
   const setUser = useSetRecoilState(currentUserState);
   const isAuth = useRecoilValue(isUserLoggedIn);
-  const [isLoading, setIsLoading] = useState(true); // Add loading state
+  
 
   useEffect(() => {
     const getCurrentUser = async () => {
@@ -29,16 +29,12 @@ const Header = () => {
         console.error("Error fetching current user:", error);
         setIsAuth(false);
         setUser(null);
-      } finally {
-        setIsLoading(false); // Set loading to false after the request completes
-      }
+      } 
     };
     getCurrentUser();
   }, [setIsAuth, setUser]);
 
-  if (isLoading) {
-    return <div>Loading...</div>; // Show loading indicator
-  }
+  
 
   return (
     <motion.header
